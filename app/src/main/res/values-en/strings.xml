@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CashBackApp</string>
+    <string name="navigation_item_myCards">My cards</string>
+    <string name="navigation_item_partners">Partners</string>
+    <string name="navigation_item_options">Options</string>
+
+    <!--            Option screen          -->
+    <string name="option_grip_type_title">Cards display</string>
+    <string name="dialog_choose_grid_type_title">Choose grid type</string>
+    <string name="option_widget_title">Widget</string>
+    <string name="option_card_order_value">Card order</string>
+
+    <string name="option_one_row_value">One in row</string>
+    <string name="option_two_row_value">Two in row</string>
+    <string name="option_cashback_updates_title">Cashback updates</string>
+    <string name="option_new_offers_title">New offers</string>
+    <string name="option_recommendations_title">Recommendations</string>
+    <string name="option_delete_all_cards_title">Delete all cards</string>
+    <string name="option_notification_title">Notification</string>
+</resources>

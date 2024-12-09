@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">CashBackApp</string>
-    <string name="navigation_item_myCards">My cards</string>
-    <string name="navigation_item_partners">Partners</string>
-    <string name="navigation_item_options">Options</string>
+    <string name="navigation_item_myCards">Мои карты</string>
+    <string name="navigation_item_partners">Партнеры</string>
+    <string name="navigation_item_options">Настройки</string>
+
+    <!--            Экран настроек          -->
+    <string name="option_grip_type_title">Отображение карт</string>
+    <string name="dialog_choose_grid_type_title">Выберите тип отображения</string>
+    <string name="option_widget_title">Виджет</string>
+    <string name="option_card_order_value">Порядок карт</string>
+
+    <string name="option_one_row_value">Одна в ряд</string>
+    <string name="option_two_row_value">Двe в ряд</string>
+    <string name="option_cashback_updates_title">Обновление кэшбека</string>
+    <string name="option_new_offers_title">Новые предложения</string>
+    <string name="option_recommendations_title">Рекомендации</string>
+    <string name="option_delete_all_cards_title">Сбросить все карты</string>
+    <string name="option_notification_title">Уведомления</string>
 </resources>

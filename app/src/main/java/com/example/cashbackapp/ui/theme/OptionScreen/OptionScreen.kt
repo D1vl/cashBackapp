@@ -1,8 +1,8 @@
 package com.example.cashbackapp.ui.theme.OptionScreen
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -14,7 +14,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.cashbackapp.ui.theme.MyCardsViewModel
 
 
@@ -22,8 +21,8 @@ import com.example.cashbackapp.ui.theme.MyCardsViewModel
 @Composable
 fun OptionScreen(
     onBackPressed: () -> Unit,
-viewModel: MyCardsViewModel,
-    ) {
+    viewModel: MyCardsViewModel,
+) {
 
     Scaffold(
         topBar = {
@@ -41,7 +40,11 @@ viewModel: MyCardsViewModel,
             )
         }
     ) { paddingValues ->
-        Column (modifier = Modifier.padding(paddingValues) ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
+        ) {
             CardsRowOption(viewModel)
         }
     }
