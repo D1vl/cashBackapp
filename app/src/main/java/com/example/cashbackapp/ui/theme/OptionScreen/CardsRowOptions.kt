@@ -21,15 +21,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import com.example.cashbackapp.ui.theme.MyCardsViewModel
 
-@Preview
+
 @Composable
-fun CardsRowOption() {
+fun CardsRowOption(
+viewModel: MyCardsViewModel
+) {
     var dialogState by remember {
         mutableStateOf(false)
     }
     if (dialogState) {
-        DialogWithGrids(onDisMissRequest = { dialogState = false })
+        DialogWithGrids(viewModel = viewModel,
+            onDisMissRequest = { dialogState = false })
     }
 
     Column(
@@ -95,20 +99,20 @@ fun CardsRowOption() {
 @Composable
 fun DialogWithGrids(
     onDisMissRequest: () -> Unit,
-//    viewModel: MyCardsViewModel,
+    viewModel: MyCardsViewModel
 ) {
     Dialog(onDismissRequest = { onDisMissRequest() }) {
         Card {
             Column {
                 Text(text = "Choose grid type")
                 Row {
-                    TextButton(onClick = { CardGridType.ONE_ROW }) {
+                    TextButton(onClick = { viewModel.selectGridType(CardGridType.ONE_ROW) }) {
                         Text(text = "One row")
                     }
                 }
                 Spacer(modifier = Modifier.width(16.dp))
                 Row {
-                    TextButton(onClick = { CardGridType.TWO_ROW }) {
+                    TextButton(onClick = { viewModel.selectGridType(CardGridType.TWO_ROW) }) {
                         Text(text = "Two row")
                     }
                 }

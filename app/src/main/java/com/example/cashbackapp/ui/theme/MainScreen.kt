@@ -60,8 +60,10 @@ fun MainScreen(viewModel: MyCardsViewModel) {
             partnersScreenContent = { /*TODO*/ },
             optionScreenContent = {
                 OptionScreen(
+                    viewModel = viewModel,
                     onBackPressed = {
                         navigationState.navHostController.popBackStack()
+
                     }
                 )
             }

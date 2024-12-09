@@ -30,7 +30,7 @@ class MyCardsViewModel : ViewModel() {
         }
     }
 
-    private val initialState = MyCardsScreenState()
+    private val initialState = MyCardsScreenState(myCardPosts = sourceList)
 
     private val _screenState = MutableLiveData(initialState)
     val screenState: LiveData<MyCardsScreenState> = _screenState
@@ -40,6 +40,6 @@ class MyCardsViewModel : ViewModel() {
     fun selectGridType(
         cardGridType: CardGridType
     ) {
-
+        _screenState.value = initialState.copy(gridSettings = cardGridType)
     }
 }
