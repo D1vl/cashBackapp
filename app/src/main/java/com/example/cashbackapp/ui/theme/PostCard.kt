@@ -33,9 +33,7 @@ fun PostCard(
             .width(176.dp)
             .height(121.dp)
     ) {
-
-        Row()
-        {
+        Row {
             Image(
                 modifier = Modifier.padding(start = 10.dp, top = 10.dp, end = 8.dp),
                 imageVector = Icons.Default.AccountCircle, contentDescription = ""
@@ -63,24 +61,32 @@ fun PostCard(
 @Composable
 fun HeaderWithSearch() {
     Column {
-        Row (modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
             IconButton(onClick = { /*TODO*/ }) {
                 Icon(imageVector = Icons.Default.MoreVert, contentDescription = "")
 
             }
-            Text(modifier = Modifier.padding(),
-                text = "My cards")
+            Text(
+                modifier = Modifier.padding(),
+                text = "My cards"
+            )
             IconButton(onClick = { /*TODO*/ }) {
                 Icon(imageVector = Icons.Default.AddCircle, contentDescription = "")
 
             }
         }
-        SearchBar(query = "Search", onQueryChange = {}, onSearch = {}, active = false, onActiveChange = {}, modifier = Modifier.fillMaxWidth() ) {
+        SearchBar(
+            query = "Search",
+            onQueryChange = {},
+            onSearch = {},
+            active = false,
+            onActiveChange = {},
+            modifier = Modifier.fillMaxWidth()
+        ) {
 
         }
     }
-
-
-
 }

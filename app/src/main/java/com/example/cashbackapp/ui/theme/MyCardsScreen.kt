@@ -1,7 +1,6 @@
 package com.example.cashbackapp.ui.theme
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -25,26 +24,23 @@ import com.example.cashbackapp.ui.theme.OptionScreen.CardGridType.TWO_ROW
 @Composable
 fun MyCardsScreen(viewModel: MyCardsViewModel) {
 
-    val screenState = viewModel.screenState.observeAsState(MyCardsScreenState.Initial)
-
+    val screenState = viewModel.screenState.observeAsState()
     when (val currentState = screenState.value) {
-        is MyCardsScreenState.MyCardPosts -> {
-            Column {
-                HeaderWithSearch()
-
-                MyCardsItems(
-                    viewModel = viewModel, cards = currentState.myCardPosts, cardGridType = TWO_ROW
-                )
-            }
-
-        }
-
-        MyCardsScreenState.Initial -> {
-
-        }
+//        is MyCardsScreenState.MyCardPosts -> {
+//            Column {
+//                HeaderWithSearch()
+//
+//                MyCardsItems(
+//                    viewModel = viewModel, cards = currentState.myCardPosts, cardGridType = TWO_ROW
+//                )
+//            }
+//
+//        }
+//
+//        MyCardsScreenState.Initial -> {
+//
+//        }
     }
-
-
 }
 
 @Composable
@@ -53,10 +49,7 @@ fun MyCardsItems(
     cards: List<CardItem>,
     cardGridType: CardGridType
 ) {
-
-
     when (cardGridType) {
-
         ONE_ROW -> {
             OneRowGrid(cards = cards)
         }
@@ -64,18 +57,13 @@ fun MyCardsItems(
         TWO_ROW -> {
             TwoRowGrid(cards = cards)
         }
-
     }
-
-
 }
 
 @Composable
 fun OneRowGrid(
-
     cards: List<CardItem>,
-
-    ) {
+) {
     Card(
         shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp),
         colors = CardDefaults.cardColors(containerColor = Color.DarkGray),
@@ -90,9 +78,7 @@ fun OneRowGrid(
                 items = cards,
                 key = { it.id }
             ) { cardItem ->
-
                 // нужно повесить лисенеры кликов туть
-
                 PostCard(cardItem = cardItem)
             }
         }
@@ -101,17 +87,13 @@ fun OneRowGrid(
 
 @Composable
 fun TwoRowGrid(
-
     cards: List<CardItem>,
-
-    ) {
+) {
     Card(
         shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp),
         colors = CardDefaults.cardColors(containerColor = Color.DarkGray),
         modifier = Modifier.fillMaxSize()
     ) {
-
-
         LazyVerticalGrid(columns = GridCells.Fixed(2)) {
             items(
                 items = cards,

@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
-import androidx.navigation.NavigatorState
 import androidx.navigation.compose.rememberNavController
 
 class NavigationState(
@@ -19,15 +18,13 @@ class NavigationState(
             restoreState = true
         }
     }
-
-
 }
 
 @Composable
-fun rememberNavigationState (
+fun rememberNavigationState(
     navHostController: NavHostController = rememberNavController()
 ): NavigationState {
     return remember {
-        NavigationState (navHostController)
+        NavigationState(navHostController)
     }
 }

@@ -15,16 +15,12 @@ import com.example.cashbackapp.navigation.AppNavGraph
 import com.example.cashbackapp.navigation.rememberNavigationState
 import com.example.cashbackapp.ui.theme.OptionScreen.OptionScreen
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter") // ERM....
-
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun MainScreen(viewModel: MyCardsViewModel) {
-
     val navigationState = rememberNavigationState()
     Scaffold(
-        topBar = {
-
-        },
+        topBar = {},
         bottomBar = {
             NavigationBar {
                 val navBackStackEntry by navigationState.navHostController.currentBackStackEntryAsState()
@@ -55,8 +51,7 @@ fun MainScreen(viewModel: MyCardsViewModel) {
             }
 
         },
-
-        ) {
+    ) {
         AppNavGraph(
             navHostController = navigationState.navHostController,
             myCardsScreenContent = {
@@ -73,7 +68,6 @@ fun MainScreen(viewModel: MyCardsViewModel) {
         )
     }
 }
-
 
 //@Composable
 //fun CashBackItem(): CashbackItem {

@@ -9,7 +9,7 @@ import com.example.cashbackapp.domain.CardItem
 import com.example.cashbackapp.domain.CashbackItem
 import com.example.cashbackapp.ui.theme.OptionScreen.CardGridType
 
-class MyCardsViewModel: ViewModel() {
+class MyCardsViewModel : ViewModel() {
 
     val fakeCard = CashbackItem(
         iconType = Icons.Default.AccountCircle,
@@ -17,18 +17,18 @@ class MyCardsViewModel: ViewModel() {
         cashbackQuantity = "5%"
     )
 
-
     private val sourceList = mutableListOf<CardItem>().apply {
         repeat(5) {
-            add(CardItem(id = it,
-                bankName = "Sber",
-                cardType = "credit",
-                cashBack = fakeCard
-                ))
+            add(
+                CardItem(
+                    id = it,
+                    bankName = "Sber",
+                    cardType = "credit",
+                    cashBack = fakeCard
+                )
+            )
         }
     }
-
-
 
     private val initialState = MyCardsScreenState()
 
@@ -36,10 +36,10 @@ class MyCardsViewModel: ViewModel() {
     val screenState: LiveData<MyCardsScreenState> = _screenState
 
 
-    // сделать функцию, чтобы выз
-fun selectGridType (
-    cardGridType: CardGridType
-) {
-    cardGridType
-}
+    // Сделать функцию для выбора типа отображения карточки
+    fun selectGridType(
+        cardGridType: CardGridType
+    ) {
+
+    }
 }

@@ -15,21 +15,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import com.example.cashbackapp.ui.theme.MyCardsViewModel
 
 @Preview
 @Composable
-fun CardsRowOption(
-
-) {
-
+fun CardsRowOption() {
     var dialogState by remember {
         mutableStateOf(false)
     }
@@ -42,13 +37,12 @@ fun CardsRowOption(
             .padding(start = 16.dp, top = 16.dp)
             .fillMaxSize()
     ) {
-        Card(modifier = Modifier
-            .clickable {
-                dialogState = true
-            }
-            .padding(bottom = 24.dp)) {
-
-
+        Card(
+            modifier = Modifier
+                .clickable {
+                    dialogState = true
+                }
+                .padding(bottom = 24.dp)) {
             Row {
                 Text(text = "Cards display")
                 Spacer(modifier = Modifier.width(16.dp))
@@ -101,11 +95,8 @@ fun CardsRowOption(
 @Composable
 fun DialogWithGrids(
     onDisMissRequest: () -> Unit,
-    viewModel: MyCardsViewModel,
-    ) {
-
-
-
+//    viewModel: MyCardsViewModel,
+) {
     Dialog(onDismissRequest = { onDisMissRequest() }) {
         Card {
             Column {
