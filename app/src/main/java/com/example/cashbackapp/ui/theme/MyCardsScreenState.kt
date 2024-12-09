@@ -5,7 +5,7 @@ import com.example.cashbackapp.ui.theme.OptionScreen.CardGridType
 
 data class MyCardsScreenState(
     val myCardPosts: List<CardItem> = emptyList(),
-    val gridSettings: CardGridType = CardGridType.ONE_ROW
+    var gridSettings: CardGridType = CardGridType.ONE_ROW
 ) {
 //    object Initial: MyCardsScreenState()
 //    data class MyCardPosts(val myCardPosts: List<CardItem>) : MyCardsScreenState()

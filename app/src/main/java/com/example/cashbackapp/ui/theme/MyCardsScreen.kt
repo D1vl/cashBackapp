@@ -24,22 +24,23 @@ import com.example.cashbackapp.ui.theme.OptionScreen.CardGridType.TWO_ROW
 @Composable
 fun MyCardsScreen(viewModel: MyCardsViewModel) {
 
-    val screenState = viewModel.screenState.observeAsState()
+    val screenState = viewModel.screenState.observeAsState(MyCardsScreenState())
+
     when (val currentState = screenState.value) {
-//        is MyCardsScreenState.MyCardPosts -> {
-//            Column {
-//                HeaderWithSearch()
-//
-//                MyCardsItems(
-//                    viewModel = viewModel, cards = currentState.myCardPosts, cardGridType = TWO_ROW
-//                )
-//            }
-//
-//        }
-//
-//        MyCardsScreenState.Initial -> {
-//
-//        }
+        is MyCardsScreenState -> {
+            Column {
+                HeaderWithSearch()
+
+                MyCardsItems(
+                    viewModel = viewModel, cards = currentState.myCardPosts, cardGridType = screenState.value.gridSettings
+                )
+            }
+
+        }
+
+        is MyCardsScreenState -> {
+
+        }
     }
 }
 

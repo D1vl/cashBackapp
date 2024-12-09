@@ -29,7 +29,8 @@ fun CardsRowOption() {
         mutableStateOf(false)
     }
     if (dialogState) {
-        DialogWithGrids(onDisMissRequest = { dialogState = false })
+        DialogWithGrids(viewModel = MyCardsViewModel(),
+            onDisMissRequest = { dialogState = false })
     }
 
     Column(
@@ -95,20 +96,20 @@ fun CardsRowOption() {
 @Composable
 fun DialogWithGrids(
     onDisMissRequest: () -> Unit,
-//    viewModel: MyCardsViewModel,
+//    viewModel: MyCardsViewModel
 ) {
     Dialog(onDismissRequest = { onDisMissRequest() }) {
         Card {
             Column {
                 Text(text = "Choose grid type")
                 Row {
-                    TextButton(onClick = { CardGridType.ONE_ROW }) {
+                    TextButton(onClick = { viewModel.selectGridType(CardGridType.ONE_ROW) }) {
                         Text(text = "One row")
                     }
                 }
                 Spacer(modifier = Modifier.width(16.dp))
                 Row {
-                    TextButton(onClick = { CardGridType.TWO_ROW }) {
+                    TextButton(onClick = { viewModel.selectGridType(CardGridType.TWO_ROW) }) {
                         Text(text = "Two row")
                     }
                 }
