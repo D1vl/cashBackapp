@@ -3,7 +3,7 @@ package com.example.cashbackapp.ui.theme
 import com.example.cashbackapp.domain.CardItem
 import com.example.cashbackapp.ui.theme.OptionScreen.CardGridType
 
-data class MyCardsScreenState(
+data class MyCardsScreenState       (
     val myCardPosts: List<CardItem> = emptyList(),
     var gridSettings: CardGridType = CardGridType.ONE_ROW
 ) {

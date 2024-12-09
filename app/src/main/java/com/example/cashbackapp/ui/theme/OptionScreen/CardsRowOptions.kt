@@ -22,14 +22,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 
-@Preview
+
 @Composable
-fun CardsRowOption() {
+fun CardsRowOption(
+viewModel: MyCardsViewModel
+) {
     var dialogState by remember {
         mutableStateOf(false)
     }
     if (dialogState) {
-        DialogWithGrids(viewModel = MyCardsViewModel(),
+        DialogWithGrids(viewModel = viewModel,
             onDisMissRequest = { dialogState = false })
     }
 

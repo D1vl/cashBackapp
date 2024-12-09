@@ -15,13 +15,14 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.cashbackapp.ui.theme.MyCardsViewModel
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OptionScreen(
     onBackPressed: () -> Unit,
-
+viewModel: MyCardsViewModel,
     ) {
 
     Scaffold(
@@ -41,7 +42,7 @@ fun OptionScreen(
         }
     ) { paddingValues ->
         Column (modifier = Modifier.padding(paddingValues) ) {
-            CardsRowOption()
+            CardsRowOption(viewModel)
         }
     }
 }
